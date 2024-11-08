@@ -1,0 +1,8 @@
+# via from https://github.com/CurrySoftware/Telegram-Notifier
+[Unit]
+Description=Unit Status Telegram Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/unit-status-telegram %I

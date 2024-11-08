@@ -1,0 +1,10 @@
+#!/bin/sh
+
+UNIT=$1
+
+UNITSTATUS=$(systemctl status "$UNIT")
+ALERT=$(echo -e "\u26A0")
+
+/usr/bin/telegram-msg-send "$ALERT Unit failed $UNIT $ALERT
+Status:
+$UNITSTATUS"

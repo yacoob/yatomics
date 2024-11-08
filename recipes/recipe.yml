@@ -5,6 +5,10 @@ base-image: ghcr.io/ublue-os/aurora-dx
 image-version: stable
 
 modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
   - type: copy
     from: docker.io/creativeprojects/resticprofile
     src: /usr/bin/resticprofile
