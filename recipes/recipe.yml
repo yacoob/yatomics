@@ -5,11 +5,6 @@ base-image: ghcr.io/ublue-os/aurora-dx
 image-version: stable
 
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: /
-
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
