@@ -5,6 +5,10 @@ base-image: ghcr.io/ublue-os/aurora-dx
 image-version: stable
 
 modules:
+  - type: copy
+    from: docker.io/creativeprojects/resticprofile
+    src: /usr/bin/resticprofile
+    dest: /usr/local/bin
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
