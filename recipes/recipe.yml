@@ -1,5 +1,6 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: yaurora
-description:  💙 ublue-os/aurora-dx the way I like it 
+description: 💙 ublue-os/aurora-dx the way I like it
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/aurora-dx
@@ -61,7 +62,6 @@ modules:
         - org.telegram.desktop
         - org.wezfurlong.wezterm
         - tv.plex.PlexDesktop
-      remove:
 
   - type: chezmoi
     repository: https://github.com/yacoob/dotfiles
