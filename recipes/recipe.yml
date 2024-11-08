@@ -8,12 +8,12 @@ modules:
   - type: copy
     from: docker.io/creativeprojects/resticprofile
     src: /usr/bin/resticprofile
-    dest: /usr/local/bin
+    dest: /usr/bin/
   - type: script
     snippets:
       # eget
       - curl https://zyedidia.github.io/eget.sh | sh
-      - install eget /usr/local/bin
+      - install eget /usr/bin
       - rm -f eget
   - type: rpm-ostree
     repos:
