@@ -1,14 +1,20 @@
 name: bluebuild
 on:
-  schedule:
-    - cron: "00 06 * * *" # build at 06:00 UTC every day 
-                          # (20 minutes after last ublue images start building)
+  registry_package:
+    types: [updated]
+    packages:
+      - "ghcr.io/ublue-os/aurora-dx"
+    filters:
+      tag: "stable"
   push:
-    paths-ignore: # don't rebuild if only documentation has changed
+    branches:
+      - main
+    paths-ignore:
       - "**.md"
-      
   pull_request:
-  workflow_dispatch: # allow manually triggering builds
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   bluebuild:
     name: Build Custom Image
