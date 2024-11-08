@@ -1,18 +1,14 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: yaurora
 description: 💙 ublue-os/aurora-dx the way I like it
-
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/aurora-dx
 image-version: stable
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: /
 
   - type: rpm-ostree
     repos:
@@ -46,7 +42,7 @@ modules:
       - Mullvad VPN
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+    notify: true
     system:
       install:
         - com.bitwarden.desktop
