@@ -9,6 +9,12 @@ modules:
     from: docker.io/creativeprojects/resticprofile
     src: /usr/bin/resticprofile
     dest: /usr/local/bin
+  - type: script
+    snippets:
+      # eget
+      - curl https://zyedidia.github.io/eget.sh | sh
+      - install eget /usr/local/bin
+      - rm -f eget
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
