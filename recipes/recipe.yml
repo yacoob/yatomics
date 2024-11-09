@@ -5,20 +5,29 @@ base-image: ghcr.io/ublue-os/aurora-dx
 image-version: stable
 
 modules:
+  # copy contents of files/system/* directly to the target
   - type: files
     files:
       - source: system
         destination: /
+
+  # copy resticprofile binary from its official docker image
   - type: copy
     from: docker.io/creativeprojects/resticprofile
     src: /usr/bin/resticprofile
     dest: /usr/bin/
+
+  # run shell scripts
   - type: script
     snippets:
-      # eget
+      # install eget via its installer
       - curl https://zyedidia.github.io/eget.sh | sh
       - install eget /usr/bin
       - rm -f eget
+      # use eget to install other binaries
+      - /usr/bin/eget watchexec/watchexec watchexec -a musl.tar.xz _ -a '^b3' -a '^sha512' --to=/usr/bin
+
+  # add repositories, install RPM packages
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
@@ -50,6 +59,7 @@ modules:
     optfix:
       - Mullvad VPN
 
+  # install flatpaks
   - type: default-flatpaks
     notify: true
     system:
@@ -68,10 +78,12 @@ modules:
         - org.wezfurlong.wezterm
         - tv.plex.PlexDesktop
 
+  # set up chezmoi
   - type: chezmoi
     repository: https://github.com/yacoob/dotfiles
     branch: atomic
     all-users: true
     file-conflict-policy: skip
 
+  # sign the image
   - type: signing
