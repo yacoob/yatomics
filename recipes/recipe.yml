@@ -71,8 +71,7 @@ modules:
   - type: chezmoi
     repository: https://github.com/yacoob/dotfiles
     branch: atomic
-    all-users: false
+    all-users: true
     file-conflict-policy: skip
-    disable-update: true
 
   - type: signing
