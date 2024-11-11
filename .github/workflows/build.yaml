@@ -1,11 +1,5 @@
 name: bluebuild
 on:
-  registry_package:
-    types: [updated]
-    packages:
-      - "ghcr.io/ublue-os/aurora-dx"
-    filters:
-      tag: "stable"
   push:
     branches:
       - main
@@ -29,6 +23,16 @@ jobs:
         recipe:
           - recipe.yml
     steps:
+      - name: Get SHA of the latest base image
+        id: registry
+        run: |
+          skopeo inspect --raw docker://ghcr.io/ublue-os/aurora-dx:stable | jq '.config.digest' > latest_base_image_sha
+      - name: Save SHA of the current base image as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: latest_base_image_sha
+          name: latest_base_image_sha
+          retention-days: 90
       - name: Build Custom Image
         uses: blue-build/github-action@v1.6
         with:
