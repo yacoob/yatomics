@@ -27,7 +27,7 @@ jobs:
       - name: Get SHA of the latest base image
         id: registry
         run: |
-          skopeo inspect --raw docker://ghcr.io/ublue-os/aurora-dx:stable | jq '.config.digest' > latest_base_image_sha
+          skopeo inspect --format '{{ .Digest }}' docker://ghcr.io/ublue-os/aurora-dx:stable > latest_base_image_sha
       - name: Save SHA of the current base image as an artifact
         uses: actions/upload-artifact@v4
         with:
