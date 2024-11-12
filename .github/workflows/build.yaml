@@ -1,4 +1,4 @@
-name: bluebuild
+name: Build a new image
 on:
   push:
     branches:
@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_call:
   workflow_dispatch:
 jobs:
   bluebuild:

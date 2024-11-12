@@ -1,0 +1,51 @@
+name: Check if we need to build a new image due to base image update
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    name: Check if there's a new version of the base image
+    runs-on: ubuntu-latest
+    outputs:
+      needs_rebuild: ${{ steps.maybe-build.conclusion == 'success' }}
+    steps:
+      - name: Get SHA of the latest base image present in the repository
+        id: registry
+        run: |
+          REGISTRY_SHA=$(skopeo inspect --raw docker://ghcr.io/ublue-os/aurora-dx:stable | jq '.config.digest')
+          echo "SHA=$REGISTRY_SHA" >> $GITHUB_OUTPUT
+
+      - name: Download artifact from the last successful build
+        id: last-artifact
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          workflow: build.yaml
+          workflow_search: false
+          workflow_conclusion: success
+          name: latest_base_image_sha
+          if_no_artifact_found: ignore
+
+      - name: Get SHA of the base image from the last successful build
+        id: last-build
+        if: steps.last-artifact.outputs.found_artifact == 'true'
+        run: |
+          LAST_BUILD_SHA=$(cat latest_base_image_sha)
+          echo "SHA=$LAST_BUILD_SHA" >> $GITHUB_OUTPUT
+
+      - name: Decide that we need a new build
+        id: maybe-build
+        if: steps.last-build.outputs.SHA != steps.registry.outputs.SHA
+        run: |
+          echo "aurora-dx:stable is currently at [${{ steps.registry.outputs.SHA }}]"
+          echo "yaurora has last been built at aurora-dx:stable's: [${{ steps.last-build.outputs.SHA }}]"
+          echo "Verdict: yaurora needs to be rebuilt"
+
+  build:
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    name: Build Custom Image
+    needs: check
+    if: needs.check.outputs.needs_rebuild == 'true'
+    uses: ./.github/workflows/build.yaml
