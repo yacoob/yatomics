@@ -1,4 +1,6 @@
-# yacoob's aurora &nbsp; [![bluebuild build badge](https://github.com/yacoob/yaurora/actions/workflows/build.yml/badge.svg)](https://github.com/yacoob/yaurora/actions/workflows/build.yaml)
+[![Build a new image](https://github.com/yacoob/yaurora/actions/workflows/build.yaml/badge.svg)](https://github.com/yacoob/yaurora/actions/workflows/build.yaml)
+
+# yacoob's aurora
 
 _...or "yet another aurora" :D_
 
