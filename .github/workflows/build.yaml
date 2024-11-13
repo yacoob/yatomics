@@ -23,17 +23,14 @@ jobs:
       matrix:
         recipe:
           - recipe.yml
+    env:
+      SHA_FILE: latest_base_image_sha
     steps:
       - name: Get SHA of the latest base image
-        id: registry
         run: |
-          skopeo inspect --format '{{ .Digest }}' docker://ghcr.io/ublue-os/aurora-dx:stable > latest_base_image_sha
-      - name: Save SHA of the current base image as an artifact
-        uses: actions/upload-artifact@v4
-        with:
-          path: latest_base_image_sha
-          name: latest_base_image_sha
-          retention-days: 90
+          F=${RUNNER_TEMP}/${SHA_FILE}
+          skopeo inspect --format '{{ .Digest }}' docker://ghcr.io/ublue-os/aurora-dx:stable > $F
+          echo "Attempting the build at: $(cat $F) (modulo a race condition 8)"
       - name: Build Custom Image
         uses: blue-build/github-action@v1
         with:
@@ -42,3 +39,9 @@ jobs:
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
           maximize_build_space: false
+      - name: Save SHA of the current base image as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: ${{ runner.temp }}/${{ env.SHA_FILE }}
+          name: latest_base_image_sha
+          retention-days: 90
