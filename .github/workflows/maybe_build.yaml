@@ -34,12 +34,16 @@ jobs:
           LAST_BUILD_SHA=$(cat latest_base_image_sha)
           echo "SHA=$LAST_BUILD_SHA" >> $GITHUB_OUTPUT
 
+      - name: Output gathered information
+        id: debug-output
+        run: |
+          echo "aurora-dx:stable is currently at [${{ steps.registry.outputs.SHA }}]"
+          echo "yaurora has last been built at aurora-dx:stable's: [${{ steps.last-build.outputs.SHA }}]"
+
       - name: Decide that we need a new build
         id: maybe-build
         if: steps.last-build.outputs.SHA != steps.registry.outputs.SHA
         run: |
-          echo "aurora-dx:stable is currently at [${{ steps.registry.outputs.SHA }}]"
-          echo "yaurora has last been built at aurora-dx:stable's: [${{ steps.last-build.outputs.SHA }}]"
           echo "Verdict: yaurora needs to be rebuilt"
 
   build:
