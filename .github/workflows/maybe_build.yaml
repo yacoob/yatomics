@@ -1,7 +1,7 @@
 name: Check if we need to build a new image due to base image update
 on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "30 */4 * * *"
   workflow_dispatch:
 
 jobs:
