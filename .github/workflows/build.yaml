@@ -39,6 +39,7 @@ jobs:
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
           maximize_build_space: false
+          use_unstable_cli: true
       - name: Save SHA of the current base image as an artifact
         uses: actions/upload-artifact@v4
         with:
