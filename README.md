@@ -8,4 +8,4 @@ This is [aurora-dx:stable](https://github.com/ublue-os/bluefin/pkgs/container/au
 
 ## next
 
-- wait for https://github.com/blue-build/cli/issues/263 and adjust `maybe-build.yaml` to use this information
+- Switch back to stable `bluebuild` version once 0.9 is released
