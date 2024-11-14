@@ -74,7 +74,6 @@ modules:
   # set up chezmoi
   - type: chezmoi
     repository: https://github.com/yacoob/dotfiles
-    branch: atomic
     all-users: true
     file-conflict-policy: skip
 
