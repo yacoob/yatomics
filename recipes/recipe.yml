@@ -61,18 +61,15 @@ modules:
     system:
       install:
         - com.bitwarden.desktop
-        - com.calibre_ebook.calibre
         - com.discordapp.Discord
         - com.plexamp.Plexamp
-        - com.slack.Slack
-        - com.valvesoftware.Steam
+        - com.rtosta.zapzap
         - io.github.martchus.syncthingtray
         - it.mijorus.gearlever
         - md.obsidian.Obsidian
         - org.speedcrunch.SpeedCrunch
         - org.telegram.desktop
         - org.wezfurlong.wezterm
-        - tv.plex.PlexDesktop
 
   # set up chezmoi
   - type: chezmoi
