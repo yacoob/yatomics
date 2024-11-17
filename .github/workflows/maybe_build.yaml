@@ -43,4 +43,6 @@ jobs:
     name: Build Custom Image
     needs: check
     if: needs.check.outputs.needs_rebuild == 'true'
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
     uses: ./.github/workflows/build.yaml

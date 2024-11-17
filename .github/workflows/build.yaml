@@ -9,6 +9,9 @@ on:
     branches:
       - main
   workflow_call:
+    secrets:
+      SIGNING_SECRET:
+        required: true
   workflow_dispatch:
 jobs:
   bluebuild:
