@@ -36,6 +36,7 @@ modules:
       - neovim
       - ripgrep
       - strace
+      - syncthing
       - tealdeer
       - trash-cli
       - ugrep
