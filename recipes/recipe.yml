@@ -30,8 +30,11 @@ modules:
       - bat
       - difftastic
       - direnv
+      - fcitx5
+      - fcitx5-mozc
       - fd-find
       - gh
+      - kcm-fcitx5
       - ltrace
       - neovim
       - ripgrep
