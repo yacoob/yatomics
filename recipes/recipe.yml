@@ -4,12 +4,42 @@ description: 💙 ublue-os/aurora-dx the way I like it
 base-image: ghcr.io/ublue-os/aurora-dx
 image-version: stable
 
+# NOTE: the order of the modules in this file translates to the order of RUN lines in generated Containerfile.
+#       Which means, keep the least often modified modules at the top, so the whole thing caches better.
 modules:
+  # set up chezmoi
+  - type: chezmoi
+    repository: https://github.com/yacoob/dotfiles
+    all-users: true
+    file-conflict-policy: skip
+
   # copy contents of files/system/* directly to the target
   - type: files
     files:
       - source: system
         destination: /
+
+  # install flatpaks
+  - type: default-flatpaks
+    notify: true
+    system:
+      install:
+        - com.bitwarden.desktop
+        - com.discordapp.Discord
+        - com.plexamp.Plexamp
+        - com.rtosta.zapzap
+        - io.github.martchus.syncthingtray
+        - it.mijorus.gearlever
+        - md.obsidian.Obsidian
+        - org.speedcrunch.SpeedCrunch
+        - org.telegram.desktop
+        - org.wezfurlong.wezterm
+      remove:
+        - io.github.dvlv.boxbuddyrs
+        - org.gnome.DejaDup
+        - org.gnome.World.PikaBackup
+        - org.kde.kcalc
+        - org.mozilla.Thunderbird
 
   # run shell scripts
   - type: script
@@ -52,33 +82,6 @@ modules:
       - neovide
     optfix:
       - Mullvad VPN
-
-  # install flatpaks
-  - type: default-flatpaks
-    notify: true
-    system:
-      install:
-        - com.bitwarden.desktop
-        - com.discordapp.Discord
-        - com.plexamp.Plexamp
-        - com.rtosta.zapzap
-        - io.github.martchus.syncthingtray
-        - it.mijorus.gearlever
-        - md.obsidian.Obsidian
-        - org.speedcrunch.SpeedCrunch
-        - org.telegram.desktop
-        - org.wezfurlong.wezterm
-      remove:
-        - io.github.dvlv.boxbuddyrs
-        - org.gnome.DejaDup
-        - org.gnome.World.PikaBackup
-        - org.kde.kcalc
-        - org.mozilla.Thunderbird
-  # set up chezmoi
-  - type: chezmoi
-    repository: https://github.com/yacoob/dotfiles
-    all-users: true
-    file-conflict-policy: skip
 
   # sign the image
   - type: signing
