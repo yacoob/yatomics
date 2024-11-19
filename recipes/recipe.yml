@@ -68,7 +68,12 @@ modules:
         - org.speedcrunch.SpeedCrunch
         - org.telegram.desktop
         - org.wezfurlong.wezterm
-
+      remove:
+        - io.github.dvlv.boxbuddyrs
+        - org.gnome.DejaDup
+        - org.gnome.World.PikaBackup
+        - org.kde.kcalc
+        - org.mozilla.Thunderbird
   # set up chezmoi
   - type: chezmoi
     repository: https://github.com/yacoob/dotfiles
