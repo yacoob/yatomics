@@ -5,7 +5,3 @@
 _...or "yet another aurora" :D_
 
 This is [aurora-dx:stable](https://github.com/ublue-os/bluefin/pkgs/container/aurora-dx/) with the extra packages that I like, built via [BlueBuild](https://blue-build.org/how-to/setup/).
-
-## next
-
-- Switch back to stable `bluebuild` version once 0.9 is released
