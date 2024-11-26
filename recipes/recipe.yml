@@ -64,6 +64,7 @@ modules:
       - fcitx5-mozc
       - fd-find
       - gh
+      - git-lfs
       - kcm-fcitx5
       - lnav
       - ltrace
