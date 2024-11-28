@@ -1,4 +1,4 @@
-name: 🤖 Check if we need to build a new image due to the base image update
+name: 📜 Check if we need to build a new image due to the base image update
 on:
   workflow_call:
     inputs:

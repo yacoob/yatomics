@@ -1,4 +1,4 @@
-name: ⏰ Build a new yaurora image
+name: ⚒️ Build a new yaurora image
 on:
   push:
     branches:

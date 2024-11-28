@@ -1,4 +1,4 @@
-name: 🤖 Build a new image
+name: 📜 Build a new image
 on:
   workflow_call:
     inputs:
