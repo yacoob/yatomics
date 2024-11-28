@@ -1,0 +1,24 @@
+name: Build a new yaucore image
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    name: Build a new yaucore image
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+    uses: ./.github/workflows/build.yaml
+    with:
+      recipe: yaucore.yaml

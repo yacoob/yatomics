@@ -1,0 +1,61 @@
+name: Check if we need to build a new image due to the base image update
+on:
+  workflow_call:
+    inputs:
+      base:
+        description: Base image (user/name:tag) to check for updates
+        required: true
+        type: string
+      derivative:
+        description: My image (user/name:tag) to compare against
+        required: true
+        type: string
+      recipe:
+        description: Recipe file to use for the build
+        required: true
+        type: string
+
+jobs:
+  check:
+    name: Check if there's a new version of the base image
+    runs-on: ubuntu-latest
+    outputs:
+      needs_rebuild: ${{ steps.maybe-build.conclusion == 'success' }}
+    steps:
+      - name: Get SHA of the latest ${{ inputs.base }} present in the repository
+        id: registry
+        run: |
+          REGISTRY_SHA=$(skopeo inspect docker://ghcr.io/${{ inputs.base }} | jq '.Digest' )
+          echo "SHA=$REGISTRY_SHA" >> $GITHUB_OUTPUT
+
+      - name: Get SHA of the latest ${{ inputs.derivative }} present in the repository
+        id: last-build
+        run: |
+          LAST_BUILD_SHA=$(skopeo inspect docker://ghcr.io/${{ inputs.derivative }} | jq '.Labels."org.opencontainers.image.base.digest"')
+          echo "SHA=$LAST_BUILD_SHA" >> $GITHUB_OUTPUT
+
+      - name: Output gathered information
+        id: debug-output
+        run: |
+          echo "${{ inputs.base }} is currently at [${{ steps.registry.outputs.SHA }}]"
+          echo "${{ inputs.derivative }} has last been built at ${{ inputs.base }}'s: [${{ steps.last-build.outputs.SHA }}]"
+
+      - name: Decide that we need a new build
+        id: maybe-build
+        if: steps.last-build.outputs.SHA != steps.registry.outputs.SHA
+        run: |
+          echo "Verdict: ${{ inputs.derivative }} needs to be rebuilt"
+
+  build:
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    name: Build a custom image
+    needs: check
+    if: needs.check.outputs.needs_rebuild == 'true'
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+    uses: ./.github/workflows/build.yaml
+    with:
+      recipe: ${{ inputs.recipe }}

@@ -1,0 +1,20 @@
+name: Check if we need to build a new yaurora image
+on:
+  schedule:
+    - cron: "30 */4 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    name: Check if we need a new yaurora image
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+    uses: ./.github/workflows/maybe-build.yaml
+    with:
+      base: ublue-os/aurora-dx:stable
+      derivative: yacoob/yaurora:latest
+      recipe: yaurora.yaml
