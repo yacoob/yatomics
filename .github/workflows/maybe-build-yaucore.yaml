@@ -1,4 +1,4 @@
-name: Check if we need to build a new yaucore image
+name: ⏰ Check if we need to build a new yaucore image
 on:
   schedule:
     - cron: "30 */4 * * *"
@@ -15,6 +15,5 @@ jobs:
       SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
     uses: ./.github/workflows/maybe-build.yaml
     with:
-      base: ublue-os/ucore-hci:stable
-      derivative: yacoob/yaucore:latest
+      image: yacoob/yaucore:latest
       recipe: yaucore.yaml

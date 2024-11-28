@@ -1,4 +1,4 @@
-name: Build a new yaucore image
+name: ⏰ Build a new yaucore image
 on:
   push:
     branches:
