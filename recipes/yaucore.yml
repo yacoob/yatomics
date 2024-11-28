@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: yaucore
+description: 💙 ublue-os/ucore the way I like it
+base-image: ghcr.io/ublue-os/ucore-hci
+image-version: stable
+
+# NOTE: the order of the modules in this file translates to the order of RUN lines in generated Containerfile.
+#       Which means, keep the least often modified modules at the top, so the whole thing caches better.
+modules:
+  # set up chezmoi
+  - type: chezmoi
+    repository: https://github.com/yacoob/dotfiles
+    all-users: true
+    file-conflict-policy: skip
+
+  # copy contents of files/system/* directly to the target
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  # run shell scripts
+  - type: script
+    scripts:
+      - eget.sh
+
+  # add repositories, install RPM packages
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/faramirza/gdu/repo/fedora-%OS_VERSION%/faramirza-gdu-fedora-%OS_VERSION%.repo
+      - https://repository.mullvad.net/rpm/stable/mullvad.repo
+    install:
+      - ansible
+      - autorestic
+      - bat
+      - difftastic
+      - direnv
+      - fd-find
+      - gh
+      - git-lfs
+      - lnav
+      - ltrace
+      - neovim
+      - ripgrep
+      - strace
+      - syncthing
+      - tealdeer
+      - ugrep
+      - yq
+      # third party pkgs
+      - bottom
+      - gdu
+      - lazygit
+      - mullvad-vpn
+    optfix:
+      - Mullvad VPN
+
+  # sign the image
+  - type: signing

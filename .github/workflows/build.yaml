@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 jobs:
   bluebuild:
-    name: Build Custom Image
+    name: Build Custom Images
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -25,7 +25,8 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - recipe.yml
+          - yaucore.yml
+          - yaurora.yml
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@v1
