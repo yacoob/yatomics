@@ -1,0 +1,5 @@
+# copy contents of files/system/* directly to the target
+type: files
+files:
+  - source: system
+    destination: /

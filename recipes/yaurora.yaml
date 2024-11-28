@@ -7,17 +7,15 @@ image-version: stable
 # NOTE: the order of the modules in this file translates to the order of RUN lines in generated Containerfile.
 #       Which means, keep the least often modified modules at the top, so the whole thing caches better.
 modules:
-  # set up chezmoi
-  - type: chezmoi
-    repository: https://github.com/yacoob/dotfiles
-    all-users: true
-    file-conflict-policy: skip
+  - from-file: base/chezmoi.yaml
+  - from-file: base/files.yaml
+  - from-file: base/script.yaml
+  - from-file: base/rpm-ostree.yaml
 
-  # copy contents of files/system/* directly to the target
-  - type: files
-    files:
-      - source: system
-        destination: /
+  # run shell scripts
+  - type: script
+    scripts:
+      - os-release-yaurora.sh
 
   # install flatpaks
   - type: default-flatpaks
@@ -41,49 +39,17 @@ modules:
         - org.kde.kcalc
         - org.mozilla.Thunderbird
 
-  # run shell scripts
-  - type: script
-    scripts:
-      - eget.sh
-      - os-release.sh
-
   # add repositories, install RPM packages
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/faramirza/gdu/repo/fedora-%OS_VERSION%/faramirza-gdu-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/mdwalters/neovide/repo/fedora-%OS_VERSION%/mdwalters-neovide-fedora-%OS_VERSION%.repo
-      - https://repository.mullvad.net/rpm/stable/mullvad.repo
     install:
-      - autorestic
-      - bat
-      - difftastic
-      - direnv
       - fcitx5
       - fcitx5-mozc
-      - fd-find
-      - gh
-      - git-lfs
       - kcm-fcitx5
-      - lnav
-      - ltrace
-      - neovim
-      - ripgrep
-      - strace
-      - syncthing
-      - tealdeer
       - trash-cli
-      - ugrep
-      - yq
       # third party pkgs
-      - bottom
-      - gdu
-      - lazygit
-      - mullvad-vpn
       - neovide
-    optfix:
-      - Mullvad VPN
 
   # sign the image
   - type: signing

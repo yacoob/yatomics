@@ -1,0 +1,31 @@
+# add repositories, install RPM packages
+type: rpm-ostree
+repos:
+  - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/faramirza/gdu/repo/fedora-%OS_VERSION%/faramirza-gdu-fedora-%OS_VERSION%.repo
+  - https://repository.mullvad.net/rpm/stable/mullvad.repo
+install:
+  - autorestic
+  - bat
+  - difftastic
+  - direnv
+  - fd-find
+  - gh
+  - git-lfs
+  - lnav
+  - ltrace
+  - neovim
+  - ripgrep
+  - strace
+  - syncthing
+  - tealdeer
+  - ugrep
+  - yq
+  # third party pkgs
+  - bottom
+  - gdu
+  - lazygit
+  - mullvad-vpn
+optfix:
+  - Mullvad VPN
