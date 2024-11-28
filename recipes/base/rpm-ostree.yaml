@@ -6,6 +6,7 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/faramirza/gdu/repo/fedora-%OS_VERSION%/faramirza-gdu-fedora-%OS_VERSION%.repo
   - https://repository.mullvad.net/rpm/stable/mullvad.repo
 install:
+  - ansible
   - autorestic
   - bat
   - difftastic
