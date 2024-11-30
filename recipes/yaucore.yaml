@@ -17,5 +17,11 @@ modules:
     scripts:
       - os-release-yaucore.sh
 
+  # add repositories, install RPM packages
+  - type: rpm-ostree
+    install:
+      - man-db
+      - man-pages
+
   # sign the image
   - type: signing
