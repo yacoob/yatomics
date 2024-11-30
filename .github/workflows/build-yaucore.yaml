@@ -5,9 +5,13 @@ on:
       - main
     paths-ignore:
       - "**.md"
+      - "recipes/yaurora.yaml"
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - "**.md"
+      - "recipes/yaurora.yaml"
   workflow_dispatch:
 
 jobs:
