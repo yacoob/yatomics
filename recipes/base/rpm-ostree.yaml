@@ -9,6 +9,7 @@ install:
   - ansible
   - autorestic
   - bat
+  - butane
   - difftastic
   - direnv
   - fd-find
