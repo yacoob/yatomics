@@ -14,6 +14,10 @@ on:
       SIGNING_SECRET:
         required: true
 
+concurrency:
+  group: ${{ inputs.recipe }}
+  cancel-in-progress: true
+
 jobs:
   check:
     name: Check if there's a new version of the base image

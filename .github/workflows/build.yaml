@@ -9,6 +9,11 @@ on:
     secrets:
       SIGNING_SECRET:
         required: true
+
+concurrency:
+  group: ${{ inputs.recipe }}
+  cancel-in-progress: true
+
 jobs:
   bluebuild:
     name: Build a custom image via ${{ inputs.recipe }}
