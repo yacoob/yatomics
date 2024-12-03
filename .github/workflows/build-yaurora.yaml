@@ -6,12 +6,14 @@ on:
     paths-ignore:
       - "**.md"
       - "recipes/yaucore.yaml"
+      - "files/scripts/*-yaucore.sh"
   pull_request:
     branches:
       - main
     paths-ignore:
       - "**.md"
       - "recipes/yaucore.yaml"
+      - "files/scripts/*-yaucore.sh"
   workflow_dispatch:
 
 jobs:

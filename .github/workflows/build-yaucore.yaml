@@ -6,12 +6,14 @@ on:
     paths-ignore:
       - "**.md"
       - "recipes/yaurora.yaml"
+      - "files/scripts/*-yaurora.sh"
   pull_request:
     branches:
       - main
     paths-ignore:
       - "**.md"
       - "recipes/yaurora.yaml"
+      - "files/scripts/*-yaurora.sh"
   workflow_dispatch:
 
 jobs:
