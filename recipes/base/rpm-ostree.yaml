@@ -9,6 +9,7 @@ install:
   - ansible
   - autorestic
   - bat
+  - btrbk
   - butane
   - difftastic
   - direnv
