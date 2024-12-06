@@ -2,7 +2,7 @@
 set -euo pipefail
 # install eget via its installer
 curl https://zyedidia.github.io/eget.sh | sh
-install eget /usr/bin
+install -o root -g root eget /usr/bin
 rm -f eget
 # use eget to install other binaries
 eget atanunq/viu --to=/usr/bin
