@@ -15,7 +15,7 @@ on:
         required: true
 
 concurrency:
-  group: ${{ inputs.recipe }}
+  group: maybe-${{ inputs.recipe }}
   cancel-in-progress: true
 
 jobs:
