@@ -4,7 +4,6 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/faramirza/gdu/repo/fedora-%OS_VERSION%/faramirza-gdu-fedora-%OS_VERSION%.repo
-  - https://repository.mullvad.net/rpm/stable/mullvad.repo
 install:
   - ansible
   - autorestic
@@ -31,6 +30,3 @@ install:
   - bottom
   - gdu
   - lazygit
-  - mullvad-vpn
-optfix:
-  - Mullvad VPN

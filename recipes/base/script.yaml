@@ -2,3 +2,4 @@
 type: script
 scripts:
   - eget.sh
+  - mullvad-wg.sh
