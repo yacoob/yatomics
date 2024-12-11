@@ -3,6 +3,7 @@ type: rpm-ostree
 repos:
   - https://copr.fedorainfracloud.org/coprs/atim/bottom/repo/fedora-%OS_VERSION%/atim-bottom-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
+  - https://copr.fedorainfracloud.org/coprs/varlad/zellij/repo/fedora-%OS_VERSION%/varlad-zellij-fedora-%OS_VERSION%.repo
   - https://copr.fedorainfracloud.org/coprs/faramirza/gdu/repo/fedora-%OS_VERSION%/faramirza-gdu-fedora-%OS_VERSION%.repo
 install:
   - ansible
@@ -26,6 +27,7 @@ install:
   - tealdeer
   - ugrep
   - yq
+  - zellij
   # third party pkgs
   - bottom
   - gdu
