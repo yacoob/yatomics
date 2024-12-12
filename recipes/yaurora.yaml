@@ -36,7 +36,9 @@ modules:
         - io.github.dvlv.boxbuddyrs
         - org.gnome.DejaDup
         - org.gnome.World.PikaBackup
+        - org.kde.gwenview
         - org.kde.kcalc
+        - org.kde.okular
         - org.mozilla.Thunderbird
 
   # add repositories, install RPM packages
@@ -46,7 +48,9 @@ modules:
     install:
       - fcitx5
       - fcitx5-mozc
+      - gwenview
       - kcm-fcitx5
+      - okular
       - trash-cli
       # third party pkgs
       - neovide
