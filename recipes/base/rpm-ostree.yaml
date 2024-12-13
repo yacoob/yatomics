@@ -11,6 +11,7 @@ install:
   - bat
   - btrbk
   - butane
+  - chafa
   - difftastic
   - direnv
   - fd-find

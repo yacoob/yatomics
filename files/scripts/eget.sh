@@ -5,7 +5,6 @@ curl https://zyedidia.github.io/eget.sh | sh
 install -o root -g root eget /usr/bin
 rm -f eget
 # use eget to install other binaries
-eget atanunq/viu --to=/usr/bin
 eget atuinsh/atuin -a gnu -a '^update' --to=/usr/bin
 eget containers/podlet --to=/usr/bin -a gnu
 eget creativeprojects/resticprofile -a no_self_update --to=/usr/bin
