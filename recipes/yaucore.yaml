@@ -24,6 +24,11 @@ modules:
       - man-db
       - man-pages
       - zsh
+    remove:
+      - containerd
+      - docker-cli
+      - moby-engine
+      - moby-filesystem
 
   # sign the image
   - type: signing

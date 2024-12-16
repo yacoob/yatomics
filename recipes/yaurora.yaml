@@ -54,6 +54,14 @@ modules:
       - trash-cli
       # third party pkgs
       - neovide
+    remove:
+      - code
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-ce
+      - docker-ce-cli
+      - docker-ce-rootless-extras
+      - docker-compose-plugin
 
   # sign the image
   - type: signing
