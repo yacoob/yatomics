@@ -16,6 +16,7 @@ install:
   - direnv
   - eza
   - fd-find
+  - fido2-tools
   - gh
   - git-lfs
   - lnav
