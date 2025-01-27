@@ -49,6 +49,7 @@ modules:
       - alacritty
       - fcitx5
       - fcitx5-mozc
+      - foot
       - gwenview
       - kcm-fcitx5
       - okular
