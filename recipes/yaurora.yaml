@@ -46,10 +46,8 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/mdwalters/neovide/repo/fedora-%OS_VERSION%/mdwalters-neovide-fedora-%OS_VERSION%.repo
     install:
-      - alacritty
       - fcitx5
       - fcitx5-mozc
-      - foot
       - gwenview
       - kcm-fcitx5
       - okular
