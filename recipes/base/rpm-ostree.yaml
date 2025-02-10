@@ -19,6 +19,7 @@ install:
   - fido2-tools
   - gh
   - git-lfs
+  - libicu
   - lnav
   - ltrace
   - neovim
