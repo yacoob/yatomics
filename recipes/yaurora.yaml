@@ -43,17 +43,14 @@ modules:
 
   # add repositories, install RPM packages
   - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/mdwalters/neovide/repo/fedora-%OS_VERSION%/mdwalters-neovide-fedora-%OS_VERSION%.repo
     install:
       - fcitx5
       - fcitx5-mozc
       - gwenview
       - kcm-fcitx5
+      - neovim-qt
       - okular
       - trash-cli
-      # third party pkgs
-      - neovide
     remove:
       - code
       - containerd.io
