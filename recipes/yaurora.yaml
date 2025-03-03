@@ -45,6 +45,7 @@ modules:
   # add repositories, install RPM packages
   - type: rpm-ostree
     install:
+      - darktable
       - fcitx5
       - fcitx5-mozc
       - gwenview
