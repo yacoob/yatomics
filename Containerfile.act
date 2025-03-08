@@ -1,7 +1,7 @@
 # A runner for https://github.com/nektos/act that contains all tools used by the build workflow
 # vim: ft=dockerfile
 
-FROM catthehacker/ubuntu:act-latest@sha256:a1177eb0e8f705f5b5b568a6fb2559a69452041beddecc1f5e16205ffffbe8b3
+FROM catthehacker/ubuntu:act-latest@sha256:afbd9338d5d5c55290846befd921cbaabed061a7efc30a2d25d4c1f097f832f9
 
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends --no-install-suggests \
