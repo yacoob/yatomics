@@ -5,6 +5,8 @@ on:
       - main
     paths-ignore:
       - "**.md"
+      - "Containerfile.act"
+      - "LICENSE"
       - "recipes/yaucore.yaml"
       - "files/scripts/*-yaucore.sh"
   pull_request:
