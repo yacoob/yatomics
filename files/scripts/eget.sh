@@ -7,6 +7,7 @@ rm -f eget
 # use eget to install other binaries
 eget creativeprojects/resticprofile -a no_self_update --to=/usr/bin
 eget loft-sh/devpod -a amd64 -a devpod --to=/usr/bin
+eget sachaos/viddy --to=/usr/bin
 eget stunnel/tgsend -f 'tgsend-*' --to=/usr/bin/tgsend
 eget VorpalBlade/chezmoi_modify_manager -a gnu --to=/usr/bin
 eget wagoodman/dive -a tar --to=/usr/bin
