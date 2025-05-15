@@ -15,6 +15,7 @@ modules:
   # run shell scripts
   - type: script
     scripts:
+      - eget-yaurora.sh
       - os-release-yaurora.sh
 
   # install flatpaks
@@ -50,7 +51,6 @@ modules:
       - fcitx5-mozc
       - gwenview
       - kcm-fcitx5
-      - neovim-qt
       - okular
       - trash-cli
     remove:
