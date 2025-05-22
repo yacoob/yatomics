@@ -1,0 +1,9 @@
+[Unit]
+Description=Unit Status ntfy
+After=network.target
+ConditionPathExists=/etc/ntfy-env
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/ntfy-env
+ExecStart=/bin/sh -c '/usr/local/bin/ntfy publish --markdown --title "systemd: %H unit status" "$(systemctl status %i)"'
