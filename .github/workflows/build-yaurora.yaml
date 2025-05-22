@@ -16,6 +16,7 @@ on:
       - "**.md"
       - "recipes/yaucore.yaml"
       - "files/scripts/*-yaucore.sh"
+      - "files/system-yaucore/**"
   workflow_dispatch:
 
 jobs:

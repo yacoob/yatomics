@@ -16,6 +16,7 @@ on:
       - "**.md"
       - "recipes/yaurora.yaml"
       - "files/scripts/*-yaurora.sh"
+      - "files/system-yaurora/**"
   workflow_dispatch:
 
 jobs:
