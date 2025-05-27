@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/feishin
+Icon=feishin
+Name=Feishin
+Categories=AudioVideo;Audio;Player;Music;
+Comment=A modern self-hosted music player.
