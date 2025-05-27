@@ -5,15 +5,16 @@ on:
       - main
     paths-ignore:
       - "**.md"
-      - "Containerfile.act"
       - "LICENSE"
       - "recipes/yaucore.yaml"
       - "files/scripts/*-yaucore.sh"
+      - "files/system-yaucore/**"
   pull_request:
     branches:
       - main
     paths-ignore:
       - "**.md"
+      - "LICENSE"
       - "recipes/yaucore.yaml"
       - "files/scripts/*-yaucore.sh"
       - "files/system-yaucore/**"

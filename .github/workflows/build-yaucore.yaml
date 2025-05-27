@@ -5,15 +5,16 @@ on:
       - main
     paths-ignore:
       - "**.md"
-      - "Containerfile.act"
       - "LICENSE"
       - "recipes/yaurora.yaml"
       - "files/scripts/*-yaurora.sh"
+      - "files/system-yaurora/**"
   pull_request:
     branches:
       - main
     paths-ignore:
       - "**.md"
+      - "LICENSE"
       - "recipes/yaurora.yaml"
       - "files/scripts/*-yaurora.sh"
       - "files/system-yaurora/**"
