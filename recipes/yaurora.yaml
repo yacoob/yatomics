@@ -51,6 +51,8 @@ modules:
 
   # add repositories, install RPM packages
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
     install:
       - darktable
       - fcitx5
@@ -59,6 +61,8 @@ modules:
       - kcm-fcitx5
       - okular
       - trash-cli
+      # third party pkgs
+      - ghostty
     remove:
       - code
       - containerd.io
