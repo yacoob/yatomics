@@ -32,7 +32,7 @@ install:
   - tealdeer
   - ugrep
   - yq
-  - zellij
   # third party pkgs
   - bottom
   - lazygit
+  - zellij
