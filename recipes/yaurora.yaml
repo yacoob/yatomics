@@ -33,6 +33,7 @@ modules:
         - com.discordapp.Discord
         - com.plexamp.Plexamp
         - com.rtosta.zapzap
+        - io.github.dweymouth.supersonic
         - io.github.martchus.syncthingtray
         - it.mijorus.gearlever
         - md.obsidian.Obsidian
