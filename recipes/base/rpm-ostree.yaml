@@ -23,6 +23,7 @@ install:
   - lnav
   - ltrace
   - neovim
+  - nmap
   - podlet
   - ripgrep
   - salt-master
