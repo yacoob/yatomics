@@ -21,6 +21,8 @@ modules:
   # add repositories, install RPM packages
   - type: rpm-ostree
     install:
+      - fzf
+      - htop
       - krb5-server
       - krb5-workstation
       - man-db
