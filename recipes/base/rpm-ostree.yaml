@@ -10,7 +10,6 @@ install:
   - autorestic
   - bat
   - btrbk
-  - butane
   - chafa
   - difftastic
   - direnv
@@ -26,8 +25,6 @@ install:
   - nmap
   - podlet
   - ripgrep
-  - salt-master
-  - salt-minion
   - strace
   - syncthing
   - tealdeer
