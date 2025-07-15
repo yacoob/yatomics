@@ -10,7 +10,7 @@ modules:
   - from-file: base/chezmoi.yaml
   - from-file: base/files.yaml
   - from-file: base/script.yaml
-  - from-file: base/rpm-ostree.yaml
+  - from-file: base/dnf.yaml
 
   # copy contents of files/system-yaurora/* directly to the target
   - type: files
@@ -51,9 +51,10 @@ modules:
         - org.mozilla.Thunderbird
 
   # add repositories, install RPM packages
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/atim-lazygit-fedora-%OS_VERSION%.repo
+      copr:
+        - pgdev/ghostty
     install:
       - darktable
       - fcitx5
