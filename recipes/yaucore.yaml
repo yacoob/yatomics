@@ -10,7 +10,7 @@ modules:
   - from-file: base/chezmoi.yaml
   - from-file: base/files.yaml
   - from-file: base/script.yaml
-  - from-file: base/rpm-ostree.yaml
+  - from-file: base/dnf.yaml
 
   # run shell scripts
   - type: script
@@ -19,20 +19,23 @@ modules:
       - os-release-yaucore.sh
 
   # add repositories, install RPM packages
-  - type: rpm-ostree
+  - type: dnf
     install:
-      - fzf
-      - htop
-      - krb5-server
-      - krb5-workstation
-      - man-db
-      - man-pages
-      - zsh
+      install-weak-deps: false
+      packages:
+        - fzf
+        - htop
+        - krb5-server
+        - krb5-workstation
+        - man-db
+        - man-pages
+        - zsh
     remove:
-      - containerd
-      - docker-cli
-      - moby-engine
-      - moby-filesystem
+      packages:
+        - containerd
+        - docker-cli
+        - moby-engine
+        - moby-filesystem
 
   # sign the image
   - type: signing

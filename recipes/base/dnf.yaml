@@ -1,0 +1,39 @@
+# add repositories, install RPM packages
+type: dnf
+repos:
+  copr:
+    - atim/bottom
+    - atim/lazygit
+    - varlad/zellij
+install:
+  install-weak-deps: false
+  packages:
+    - ansible
+    - atuin
+    - autorestic
+    - bat
+    - btrbk
+    - chafa
+    - difftastic
+    - direnv
+    - fd-find
+    - fido2-tools
+    - gdu
+    - gh
+    - git-lfs
+    - libicu
+    - lnav
+    - ltrace
+    - neovim
+    - nmap
+    - podlet
+    - ripgrep
+    - strace
+    - syncthing
+    - tealdeer
+    - ugrep
+    - yq
+    # third party pkgs
+    - bottom
+    - lazygit
+    - zellij
