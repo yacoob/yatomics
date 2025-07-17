@@ -23,12 +23,14 @@ modules:
     install:
       install-weak-deps: false
       packages:
+        - etckeeper
         - fzf
         - htop
         - krb5-server
         - krb5-workstation
         - man-db
         - man-pages
+        - wget
         - zsh
     remove:
       packages:
