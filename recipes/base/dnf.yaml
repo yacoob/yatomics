@@ -27,7 +27,6 @@ install:
     - neovim
     - nmap
     - nodejs-npm
-    - podlet
     - python3-ansible-lint
     - python3-libdnf5
     - ripgrep
