@@ -25,7 +25,7 @@ modules:
       - os-release-yaurora.sh
 
   # install flatpaks
-  - type: default-flatpaks
+  - type: default-flatpaks@v1
     notify: true
     system:
       install:
