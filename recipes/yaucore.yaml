@@ -9,6 +9,7 @@ image-version: stable
 modules:
   - from-file: base/chezmoi.yaml
   - from-file: base/files.yaml
+  - from-file: base/soar.yaml
   - from-file: base/script.yaml
   - from-file: base/dnf.yaml
 
