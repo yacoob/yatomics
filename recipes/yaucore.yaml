@@ -16,7 +16,6 @@ modules:
   # run shell scripts
   - type: script
     scripts:
-      - eget-yaucore.sh
       - os-release-yaucore.sh
 
   # add repositories, install RPM packages

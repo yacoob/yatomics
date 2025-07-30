@@ -1,10 +1,5 @@
 # add repositories, install RPM packages
 type: dnf
-repos:
-  copr:
-    - atim/bottom
-    - atim/lazygit
-    - varlad/zellij
 install:
   install-weak-deps: false
   packages:
@@ -36,7 +31,3 @@ install:
     - tealdeer
     - ugrep
     - yq
-    # third party pkgs
-    - bottom
-    - lazygit
-    - zellij
