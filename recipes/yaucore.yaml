@@ -25,6 +25,7 @@ modules:
       packages:
         - etckeeper
         - freeipa-client
+        - freeipa-client-common
         - freeipa-selinux
         - fzf
         - htop
