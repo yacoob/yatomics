@@ -1,9 +1,0 @@
-[Unit]
-Description=Unit Status Telegram Service
-After=network.target
-ConditionPathExists=/etc/tgsend-env
-
-[Service]
-Type=simple
-EnvironmentFile=/etc/tgsend-env
-ExecStart=/bin/sh -c '/usr/bin/tgsend -token ${TG_TOKEN} -chatid ${TG_CHAT_ID} -format markdown -message "‼️ %H unit status: \\`\\`\\`$(systemctl status %i)\\`\\`\\`"'

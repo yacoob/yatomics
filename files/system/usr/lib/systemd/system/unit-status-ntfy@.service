@@ -6,4 +6,4 @@ ConditionPathExists=/etc/ntfy-env
 [Service]
 Type=simple
 EnvironmentFile=/etc/ntfy-env
-ExecStart=/bin/sh -c '/usr/local/bin/ntfy publish --markdown --title "systemd: %H unit status" "$(systemctl status %i)"'
+ExecStart=/bin/sh -c 'curl -H "Title: %l: unit %i failed" -d "$(journalctl --unit %i --lines 5 --reverse --no-pager --boot | head -c 4095)" ntfy.sh/${NTFY_TOPIC}'
