@@ -24,6 +24,8 @@ modules:
       install-weak-deps: false
       packages:
         - etckeeper
+        - freeipa-client
+        - freeipa-selinux
         - fzf
         - htop
         - krb5-server
