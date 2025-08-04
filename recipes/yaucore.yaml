@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: yaucore
 description: 💙 ublue-os/ucore the way I like it
-base-image: ghcr.io/ublue-os/ucore-hci
+base-image: ghcr.io/ublue-os/ucore-minimal
 image-version: stable
 
 # NOTE: the order of the modules in this file translates to the order of RUN lines in generated Containerfile.
