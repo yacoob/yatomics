@@ -51,13 +51,18 @@ modules:
     install:
       install-weak-deps: false
       packages:
+        - ansible
+        - chafa
         - darktable
         - fcitx5
         - fcitx5-mozc
+        - fido2-tools
+        - gh
         - gwenview
         - kcm-fcitx5
         - neovide
         - okular
+        - python3-ansible-lint
         - trash-cli
     remove:
       packages:

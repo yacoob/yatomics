@@ -20,21 +20,6 @@ modules:
 
   # add repositories, install RPM packages
   - type: dnf
-    install:
-      install-weak-deps: false
-      packages:
-        - etckeeper
-        - freeipa-client
-        - freeipa-client-common
-        - freeipa-selinux
-        - fzf
-        - htop
-        - krb5-server
-        - krb5-workstation
-        - man-db
-        - man-pages
-        - wget
-        - zsh
     remove:
       packages:
         - containerd

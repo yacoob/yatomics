@@ -3,18 +3,18 @@ type: dnf
 install:
   install-weak-deps: false
   packages:
-    - ansible
     - atuin
     - autorestic
     - bat
     - btrbk
-    - chafa
     - difftastic
     - direnv
+    - etckeeper
     - fd-find
-    - fido2-tools
+    - freeipa-client
+    - freeipa-client-common
+    - freeipa-selinux
     - gdu
-    - gh
     - git-lfs
     - libicu
     - lnav
@@ -23,11 +23,14 @@ install:
     - nmap
     - nodejs-npm
     - pipx
-    - python3-ansible-lint
     - python3-libdnf5
     - ripgrep
     - strace
     - syncthing
+    - fzf
+    - htop
+    - man-db
+    - man-pages
+    - wget
+    - zsh
     - tealdeer
-    - ugrep
-    - yq
