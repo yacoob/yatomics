@@ -10,6 +10,8 @@ install:
     - direnv
     - etckeeper
     - fd-find
+    - firewalld
+    - firewalld-filesystem
     - freeipa-client
     - freeipa-client-common
     - freeipa-selinux
