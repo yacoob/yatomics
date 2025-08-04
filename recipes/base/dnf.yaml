@@ -3,35 +3,55 @@ type: dnf
 install:
   packages:
     - atuin
+    - audit
     - autorestic
     - bat
     - btrbk
+    - clevis
+    - clevis-luks
+    - clevis-pin-tpm2
     - difftastic
     - direnv
+    - dmidecode
+    - dnf5-plugins
     - etckeeper
+    - exiv2
     - fd-find
     - firewalld
     - firewalld-filesystem
     - freeipa-client
     - freeipa-client-common
     - freeipa-selinux
+    - fzf
     - gdu
+    - gdisk
     - git-lfs
+    - hdparm
+    - htop
     - libicu
+    - lm_sensors
     - lnav
     - ltrace
+    - man-db
+    - man-pages
+    - netcat
     - neovim
     - nmap
     - nodejs-npm
+    - parted
+    - pciutils
     - pipx
+    - podman
+    - podman-compose
     - python3-libdnf5
+    - rclone
+    - restic
     - ripgrep
+    - rsync
+    - sysstat
     - strace
     - syncthing
-    - fzf
-    - htop
-    - man-db
-    - man-pages
-    - wget
-    - zsh
     - tealdeer
+    - wget
+    - words
+    - zsh
