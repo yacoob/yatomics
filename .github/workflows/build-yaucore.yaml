@@ -3,21 +3,25 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - "**.md"
-      - "LICENSE"
-      - "recipes/yaurora.yaml"
-      - "files/scripts/*-yaurora.sh"
-      - "files/system-yaurora/**"
+    paths:
+      - ".github/workflows/build.yaml"
+      - ".github/workflows/build-yaucore.yaml"
+      - "files/scripts/base/**"
+      - "files/scripts/yaucore/**"
+      - "files/system/**"
+      - "recipes/base/**"
+      - "recipes/yaucore.yaml"
   pull_request:
     branches:
       - main
-    paths-ignore:
-      - "**.md"
-      - "LICENSE"
-      - "recipes/yaurora.yaml"
-      - "files/scripts/*-yaurora.sh"
-      - "files/system-yaurora/**"
+    paths:
+      - ".github/workflows/build.yaml"
+      - ".github/workflows/build-yaucore.yaml"
+      - "files/scripts/base/**"
+      - "files/scripts/yaucore/**"
+      - "files/system/**"
+      - "recipes/base/**"
+      - "recipes/yaucore.yaml"
   workflow_dispatch:
 
 jobs:

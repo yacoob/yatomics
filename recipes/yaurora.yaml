@@ -16,7 +16,7 @@ modules:
   # run shell scripts
   - type: script
     scripts:
-      - os-release-yaurora.sh
+      - yaurora/os-release.sh
 
   # install flatpaks
   - type: default-flatpaks@v1
