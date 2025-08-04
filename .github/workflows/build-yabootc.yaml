@@ -1,0 +1,38 @@
+name: ⚒️ Build a new yabootc image
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/build.yaml"
+      - ".github/workflows/build-yabootc.yaml"
+      - "files/scripts/base/**"
+      - "files/scripts/yabootc/**"
+      - "files/system/**"
+      - "recipes/base/**"
+      - "recipes/yabootc.yaml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/build.yaml"
+      - ".github/workflows/build-yabootc.yaml"
+      - "files/scripts/base/**"
+      - "files/scripts/yabootc/**"
+      - "files/system/**"
+      - "recipes/base/**"
+      - "recipes/yabootc.yaml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    name: Build a new yabootc image
+    secrets:
+      SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
+    uses: ./.github/workflows/build.yaml
+    with:
+      recipe: yabootc.yaml

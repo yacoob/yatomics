@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: yabootc
+description: 💙 fedora/fedora-bootc the way I like it
+base-image: quay.io/fedora/fedora-bootc
+image-version: 42
+
+# NOTE: the order of the modules in this file translates to the order of RUN lines in generated Containerfile.
+#       Which means, keep the least often modified modules at the top, so the whole thing caches better.
+modules:
+  - from-file: base/chezmoi.yaml
+  - from-file: base/files.yaml
+  - from-file: base/soar.yaml
+  - from-file: base/script.yaml
+  - from-file: base/dnf.yaml
+
+  # run shell scripts
+  - type: script
+    scripts:
+      - yabootc/os-release.sh
+
+  # sign the image
+  - type: signing
