@@ -7,6 +7,13 @@ image-version: 42
 # NOTE: the order of the modules in this file translates to the order of RUN lines in generated Containerfile.
 #       Which means, keep the least often modified modules at the top, so the whole thing caches better.
 modules:
+
+  # bluebuild seems to be unable to install dnf5-plugins on its own
+  - type: dnf
+    install:
+      packages:
+        - dnf5-plugins
+
   - from-file: base/chezmoi.yaml
   - from-file: base/files.yaml
   - from-file: base/soar.yaml
