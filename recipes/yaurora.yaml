@@ -49,7 +49,6 @@ modules:
       copr:
         - bijumon/neovide-release
     install:
-      install-weak-deps: false
       packages:
         - ansible
         - chafa

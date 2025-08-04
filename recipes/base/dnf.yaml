@@ -1,7 +1,6 @@
 # add repositories, install RPM packages
 type: dnf
 install:
-  install-weak-deps: false
   packages:
     - atuin
     - autorestic
