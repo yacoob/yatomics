@@ -1,5 +1,8 @@
 # add repositories, install RPM packages
 type: dnf
+repos:
+  files:
+    - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 install:
   packages:
     - atuin
@@ -51,6 +54,7 @@ install:
     - sysstat
     - strace
     - syncthing
+    - tailscale
     - tealdeer
     - wget
     - words
