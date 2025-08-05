@@ -4,6 +4,7 @@ repos:
   files:
     - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 install:
+  install-weak-deps: false
   packages:
     - atuin
     - audit
