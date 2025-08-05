@@ -12,8 +12,10 @@ install:
     - bat
     - btrbk
     - clevis
+    - clevis-dracut
     - clevis-luks
     - clevis-pin-tpm2
+    - clevis-systemd
     - difftastic
     - direnv
     - dmidecode
