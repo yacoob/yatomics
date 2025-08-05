@@ -58,6 +58,7 @@ install:
     - strace
     - syncthing
     - tailscale
+    - tang
     - tealdeer
     - wget
     - words
