@@ -35,6 +35,7 @@ install:
     - hdparm
     - htop
     - httpie
+    - libcgroup-tools
     - libicu
     - lm_sensors
     - lnav
