@@ -62,7 +62,6 @@ modules:
         - kcm-fcitx5
         - neovide
         - okular
-        - python3-ansible-lint
         - trash-cli
     remove:
       packages:
