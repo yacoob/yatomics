@@ -13,10 +13,13 @@ modules:
   - from-file: base/script.yaml
   - from-file: base/dnf.yaml
 
-  # run shell scripts
-  - type: script
-    scripts:
-      - yaurora/os-release.sh
+  # /etc/os-release
+  - type: os-release
+    properties:
+      ID: yaurora
+      NAME: yaurora
+      DEFAULT_HOSTNAME: yaurora
+      VARIANT_ID: yaurora
 
   # install flatpaks
   - type: default-flatpaks@v1

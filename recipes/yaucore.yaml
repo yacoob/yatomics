@@ -13,11 +13,6 @@ modules:
   - from-file: base/script.yaml
   - from-file: base/dnf.yaml
 
-  # run shell scripts
-  - type: script
-    scripts:
-      - yaucore/os-release.sh
-
   # add repositories, install RPM packages
   - type: dnf
     remove:
