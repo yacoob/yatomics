@@ -1,6 +1,8 @@
 # add repositories, install RPM packages
 type: dnf
 repos:
+  copr:
+    - atim/bottom
   files:
     - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 install:
@@ -10,6 +12,7 @@ install:
     - audit
     - autorestic
     - bat
+    - bottom
     - btrbk
     - clevis
     - clevis-dracut
