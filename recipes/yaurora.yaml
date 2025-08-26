@@ -9,6 +9,7 @@ image-version: stable
 modules:
   - from-file: base/chezmoi.yaml
   - from-file: base/files.yaml
+  - from-file: base/brew.yaml
   - from-file: base/soar.yaml
   - from-file: base/script.yaml
   - from-file: base/dnf.yaml
@@ -76,7 +77,7 @@ modules:
         - docker-ce-rootless-extras
         - docker-compose-plugin
 
-  # regen initramfs
+  # regen initramfs to ensure clevis is included in it
   - type: initramfs
 
   # sign the image
