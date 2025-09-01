@@ -5,6 +5,7 @@ repos:
     - atim/bottom
   files:
     - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    - telegraf.repo
 install:
   install-weak-deps: false
   packages:
@@ -12,7 +13,6 @@ install:
     - audit
     - autorestic
     - bat
-    - bottom
     - btrbk
     - clevis
     - clevis-dracut
@@ -62,9 +62,12 @@ install:
     - sysstat
     - strace
     - syncthing
-    - tailscale
     - tang
     - tealdeer
     - wget
     - words
     - zsh
+    # third party pkgs
+    - bottom
+    - tailscale
+    - telegraf
