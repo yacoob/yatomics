@@ -26,7 +26,7 @@ jobs:
       EGET_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Build Custom Image
-        uses: blue-build/github-action@4d8b4df657ec923574611eec6fd7e959416c47f0 # v1.8
+        uses: blue-build/github-action@5a97103ace2f497d15a68d47818eacfe5ff7aefc # v1.9
         with:
           recipe: ${{ inputs.recipe }}
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
