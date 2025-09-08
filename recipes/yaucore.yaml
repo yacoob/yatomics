@@ -9,13 +9,15 @@ image-version: stable
 modules:
   - from-file: base/chezmoi.yaml
   - from-file: base/files.yaml
-  - from-file: base/brew.yaml
   - from-file: base/soar.yaml
   - from-file: base/script.yaml
   - from-file: base/dnf.yaml
 
   # add repositories, install RPM packages
   - type: dnf
+    install:
+      packages:
+        - ublue-brew
     remove:
       packages:
         - containerd
