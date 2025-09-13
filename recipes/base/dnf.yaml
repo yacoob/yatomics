@@ -33,6 +33,7 @@ install:
     - fzf
     - gdu
     - gdisk
+    - git-credential-oauth
     - git-lfs
     - hdparm
     - htop
