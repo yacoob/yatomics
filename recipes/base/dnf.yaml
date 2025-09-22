@@ -3,6 +3,7 @@ type: dnf
 repos:
   copr:
     - atim/bottom
+    - awood/bat-extras
   files:
     - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     - telegraf.repo
@@ -67,6 +68,7 @@ install:
     - words
     - zsh
     # third party pkgs
+    - bat-extras
     - bottom
     - tailscale
     - telegraf
