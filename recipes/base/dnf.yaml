@@ -4,6 +4,7 @@ repos:
   copr:
     - atim/bottom
     - awood/bat-extras
+    - jdxcode/mise
   files:
     - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     - telegraf.repo
@@ -70,5 +71,6 @@ install:
     # third party pkgs
     - bat-extras
     - bottom
+    - mise
     - tailscale
     - telegraf
