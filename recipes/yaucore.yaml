@@ -15,9 +15,14 @@ modules:
 
   # add repositories, install RPM packages
   - type: dnf
+    repos:
+      copr:
+        - atim/starship
     install:
       packages:
         - ublue-brew
+        # third party pkgs
+        - starship
     remove:
       packages:
         - containerd
