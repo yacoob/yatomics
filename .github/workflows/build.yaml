@@ -23,7 +23,7 @@ jobs:
       packages: write
       id-token: write
     env:
-      EGET_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MISE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Build Custom Image
         uses: blue-build/github-action@785ecb253aee6ead01454ed5bd070c2921010602 # v1.9
