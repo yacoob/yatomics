@@ -18,7 +18,6 @@ modules:
         - atim/starship
     install:
       packages:
-        - ublue-brew
         # third party pkgs
         - starship
     remove:
