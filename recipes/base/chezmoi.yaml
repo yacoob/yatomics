@@ -1,5 +1,5 @@
 # set up chezmoi
 type: chezmoi
 repository: https://github.com/yacoob/dotfiles
-all-users: true
+all-users: false
 file-conflict-policy: skip
