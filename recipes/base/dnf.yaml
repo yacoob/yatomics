@@ -54,7 +54,6 @@ install:
     - nodejs-npm
     - parted
     - pciutils
-    - pipx
     - podman
     - podman-compose
     - python3-libdnf5
