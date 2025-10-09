@@ -60,9 +60,10 @@ modules:
         - gh
         - gwenview
         - kcm-fcitx5
-        - neovide
         - okular
         - trash-cli
+        # third party pkgs
+        - neovide
     remove:
       packages:
         - code
