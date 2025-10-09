@@ -52,7 +52,6 @@ modules:
     install:
       install-weak-deps: false
       packages:
-        - ansible
         - chafa
         - darktable
         - fcitx5
