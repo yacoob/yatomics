@@ -22,7 +22,6 @@ install:
     - clevis-pin-tpm2
     - clevis-systemd
     - difftastic
-    - direnv
     - dmidecode
     - dnf5-plugins
     - etckeeper
