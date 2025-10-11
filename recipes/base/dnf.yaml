@@ -3,7 +3,6 @@ type: dnf
 repos:
   copr:
     - atim/bottom
-    - awood/bat-extras
     - dejan/lazygit
     - jdxcode/mise
   files:
@@ -68,7 +67,6 @@ install:
     - words
     - zsh
     # third party pkgs
-    - bat-extras
     - bottom
     - lazygit
     - mise
