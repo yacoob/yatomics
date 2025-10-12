@@ -72,3 +72,10 @@ install:
     - mise
     - tailscale
     - telegraf
+remove:
+  packages:
+    - vim-common
+    - vim-data
+    - vim-enhanced
+    - vim-filesystem
+    - vim-minimal
