@@ -17,6 +17,7 @@ modules:
       copr:
         - atim/starship
     install:
+      install-weak-deps: false
       packages:
         # third party pkgs
         - starship

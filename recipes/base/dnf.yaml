@@ -14,7 +14,6 @@ install:
     - atuin
     - audit
     - bat
-    - btrbk
     - clevis
     - clevis-dracut
     - clevis-luks
@@ -24,7 +23,6 @@ install:
     - dmidecode
     - dnf5-plugins
     - etckeeper
-    - exiv2
     - fd-find
     - firewalld
     - firewalld-filesystem
@@ -38,11 +36,9 @@ install:
     - git-lfs
     - hdparm
     - htop
-    - httpie
     - libcgroup-tools
     - libicu
     - lm_sensors
-    - lnav
     - ltrace
     - man-db
     - man-pages
