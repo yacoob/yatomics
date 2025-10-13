@@ -34,7 +34,6 @@ modules:
         - md.obsidian.Obsidian
         - org.signal.Signal
         - org.telegram.desktop
-        - org.wezfurlong.wezterm
       remove:
         - io.github.dvlv.boxbuddyrs
         - org.gnome.DejaDup
@@ -49,6 +48,7 @@ modules:
     repos:
       copr:
         - bijumon/neovide-release
+        - scottames/ghostty
     install:
       install-weak-deps: false
       packages:
@@ -63,6 +63,7 @@ modules:
         - okular
         - trash-cli
         # third party pkgs
+        - ghostty
         - neovide
     remove:
       packages:
