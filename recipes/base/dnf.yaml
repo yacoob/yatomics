@@ -65,6 +65,7 @@ install:
     - tealdeer
     - wget
     - words
+    - zoxide
     - zsh
     # third party pkgs
     - bottom
