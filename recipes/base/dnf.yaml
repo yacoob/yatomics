@@ -63,6 +63,7 @@ install:
     - words
     - zoxide
     - zsh
+    - zsh-syntax-highlighting
     # third party pkgs
     - bottom
     - lazygit
