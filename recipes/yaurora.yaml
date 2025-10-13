@@ -73,6 +73,9 @@ modules:
         - docker-ce-cli
         - docker-ce-rootless-extras
         - docker-compose-plugin
+        - konsole
+        - konsole-part
+        - ptyxis
 
   # regen initramfs to ensure clevis is included in it
   - type: initramfs
