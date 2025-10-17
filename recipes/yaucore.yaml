@@ -11,6 +11,10 @@ modules:
   - from-file: base/script.yaml
   - from-file: base/files.yaml
 
+  - type: script
+    scripts:
+      - yaucore/ghostty-terminfo.sh
+
   # add repositories, install RPM packages
   - type: dnf
     repos:

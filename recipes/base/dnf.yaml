@@ -42,6 +42,7 @@ install:
     - ltrace
     - man-db
     - man-pages
+    - ncurses-term
     - netcat
     - neovim
     - nmap
