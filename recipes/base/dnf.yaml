@@ -36,6 +36,8 @@ install:
     - git-lfs
     - hdparm
     - htop
+    - httpie
+    - ktls-utils
     - libcgroup-tools
     - libicu
     - lm_sensors
